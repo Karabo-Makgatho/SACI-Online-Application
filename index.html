@@ -1,0 +1,782 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOUTHERN AFRICA'S CHAPLAINS INTERNATIONAL APPLICATION</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Styles for a professional look */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9; /* Slate 100 */
+        }
+        .form-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .form-group label {
+            font-weight: 600;
+            color: #1f2937; /* Gray 800 */
+        }
+        input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="number"], select, textarea {
+            border: 1px solid #d1d5db; /* Gray 300 */
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.375rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: #2563eb; /* Blue 600 */
+            outline: 0;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container rounded-xl">
+    <!-- Header Section -->
+    <header class="text-center mb-10 border-b pb-6">
+        <div class="flex flex-col items-center justify-center mb-4">
+            <!-- LOGO PLACEHOLDER START -->
+            <div class="w-24 h-24 mb-2">
+                <!-- 
+                    *** ACTION REQUIRED: PASTE YOUR LOGO FILE PATH HERE ***
+                    Replace the placeholder text [YOUR_LOGO_FILE_PATH_HERE] with the 
+                    actual path or URL of your image file (e.g., logo.png).
+                    I've added a yellow border to visually highlight the space until you add the image.
+                -->
+                <img 
+                    id="customLogo" 
+                    src="chaplin.jpg" 
+                    alt="Southern Africa's Chaplaincy International Logo" 
+                    class="w-full h-full object-contain rounded-full border-2 border-yellow-500 bg-gray-200 p-1"
+                >
+            </div>
+            <!-- LOGO PLACEHOLDER END -->
+            
+            <!-- Bible Verse -->
+            <p class="text-sm font-medium text-blue-700 font-bold">2 CORINTHIANS 1:4</p> 
+        </div>
+        <h1 class="text-3xl font-extrabold text-blue-800 tracking-tight sm:text-4xl">
+            SOUTHERN AFRICA'S CHAPLAINS INTERNATIONAL APPLICATION
+        </h1>
+        <p class="mt-2 text-xl text-gray-600">2025-2026</p>
+        <p class="text-sm text-gray-500 mt-1">NPC 2025/828204/08</p>
+    </header>
+
+    <!-- Success Message Box (Hidden by default) -->
+    <div id="successMessage" class="hidden bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded" role="alert">
+        <p class="font-bold">Email Preparation Complete</p>
+        <p>Your application data has been packaged. You may try to check your email client. If it did not open, use the button below to **copy the content** and paste it into a new email drafted to **gmcebisi@yahoo.com**.</p>
+        
+        <!-- NEW COPY BUTTON CONTAINER -->
+        <div class="mt-4 flex items-center space-x-4">
+            <button id="copyContentBtn" class="px-4 py-2 bg-green-600 text-white text-sm font-semibold rounded-lg shadow hover:bg-green-700 transition duration-150">
+                Copy Application Content
+            </button>
+            <span id="copyStatus" class="text-sm font-medium text-green-800"></span>
+        </div>
+        <!-- END NEW COPY BUTTON CONTAINER -->
+
+        <p class="mt-4 font-semibold">
+            <span class="text-red-600">IMPORTANT:</span> You must manually attach your **ministry resume** and **copies of relevant documents** before sending the email.
+        </p>
+    </div>
+    
+    <!-- Hidden textarea to temporarily hold email body for copying -->
+    <textarea id="emailBodyContent" class="hidden"></textarea>
+
+
+    <!-- Instructions & Application Fees -->
+    <section class="mb-8 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+        <h2 class="text-xl font-bold text-blue-800 mb-2">APPLICATION FOR CHAPLAIN CREDENTIALS</h2>
+        <p class="text-sm text-gray-700 mb-4">Instructions: Information is kept confidential, and your privacy is protected.</p>
+        <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+            <li>Hardcopy application available. Please email:sacichaplaincy@gmail.com</li>
+            <li>Be sure to sign and date at the bottom of the form</li>
+            <li>If convenient, attach a small photo of yourself</li>
+            <li>**MAIL TO: Bishop M. Gcebe at gmcebisi@yahoo.com** (This is the recipient email used for submission)</li>
+            <li>Be sure to include a ministry resume and copies of any relevant documents that will help us to identify your gifts and talents.</li>
+            <li>After clicking "Submit Application" you will be redirected to Gmail where you will be able to attach your relevant documents.</li>
+        </ul>
+    </section>
+
+    <!-- Application Form -->
+    <form id="chaplaincyForm" class="space-y-8">
+        <!-- 1. Application Level -->
+        <fieldset class="p-5 border border-gray-200 rounded-lg">
+            <legend class="text-lg font-bold px-2 text-gray-700">Application Level</legend>
+            <div class="mt-4 space-y-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-10">
+                <div class="flex items-center">
+                    <input id="associate" name="applicationType" type="radio" value="Associate (Assistant/Intern)" required class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="associate" class="ml-3 block text-sm font-medium text-gray-700">ASSOCIATE (ASSISTANT CHAPLAIN) (INTERN) LEVEL CHAPLAIN</label>
+                </div>
+                <div class="flex items-center">
+                    <input id="full" name="applicationType" type="radio" value="Full Ministerial Ordination" required class="h-4 w-4 text-blue-600 border-gray-300 focus:ring-blue-500">
+                    <label for="full" class="ml-3 block text-sm font-medium text-gray-700">FULL MINISTERIAL ORDINATION</label>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- 2. Contact Information (Pages 1 & 2) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="form-group">
+                <label for="applicantLastName" class="block text-sm">Applicant Last Name *</label>
+                <input type="text" id="applicantLastName" name="applicantLastName" required class="mt-1 block w-full">
+            </div>
+            <div class="form-group">
+                <label for="applicantFirstName" class="block text-sm">Applicant First Name *</label>
+                <input type="text" id="applicantFirstName" name="applicantFirstName" required class="mt-1 block w-full">
+            </div>
+            <div class="form-group">
+                <label for="email" class="block text-sm">Email *</label>
+                <input type="email" id="email" name="email" required class="mt-1 block w-full">
+            </div>
+            <div class="form-group">
+                <label for="phone" class="block text-sm">Phone *</label>
+                <input type="tel" id="phone" name="phone" required class="mt-1 block w-full">
+            </div>
+            <div class="form-group md:col-span-2">
+                <label for="address" class="block text-sm">Address *</label>
+                <input type="text" id="address" name="address" required class="mt-1 block w-full">
+            </div>
+            <div class="form-group">
+                <label for="city" class="block text-sm">City *</label>
+                <input type="text" id="city" name="city" required class="mt-1 block w-full">
+            </div>
+            <div class="form-group">
+                <label for="province" class="block text-sm">Province *</label>
+                <input type="text" id="province" name="province" required class="mt-1 block w-full">
+            </div>
+            <div class="form-group">
+                <label for="spouseLastName" class="block text-sm">Spouse Last Name</label>
+                <input type="text" id="spouseLastName" name="spouseLastName" class="mt-1 block w-full">
+            </div>
+            <div class="form-group">
+                <label for="spouseFirstName" class="block text-sm">Spouse First Name</label>
+                <input type="text" id="spouseFirstName" name="spouseFirstName" class="mt-1 block w-full">
+            </div>
+        </div>
+
+        <!-- 3. Applicants Personal Information (Page 3) -->
+        <fieldset class="p-5 border border-gray-200 rounded-lg space-y-6">
+            <legend class="text-lg font-bold px-2 text-gray-700">Applicants Personal Information</legend>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div class="form-group">
+                    <label for="birthDate" class="block text-sm">Birth Date</label>
+                    <input type="date" id="birthDate" name="birthDate" class="mt-1 block w-full">
+                </div>
+                <div class="form-group">
+                    <label for="age" class="block text-sm">Age</label>
+                    <input type="number" id="age" name="age" min="18" class="mt-1 block w-full">
+                </div>
+                <div class="form-group">
+                    <label for="sex" class="block text-sm">Sex</label>
+                    <select id="sex" name="sex" class="mt-1 block w-full">
+                        <option value="">Select...</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div class="form-group">
+                    <label class="block text-sm mb-1">Marital Status</label>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center"><input type="radio" id="single" name="maritalStatus" value="Single" class="h-4 w-4 text-blue-600"><label for="single" class="ml-2 text-sm text-gray-700">Single</label></div>
+                        <div class="flex items-center"><input type="radio" id="married" name="maritalStatus" value="Married" class="h-4 w-4 text-blue-600"><label for="married" class="ml-2 text-sm text-gray-700">Married</label></div>
+                        <div class="flex items-center"><input type="radio" id="divorced" name="maritalStatus" value="Divorced" class="h-4 w-4 text-blue-600"><label for="divorced" class="ml-2 text-sm text-gray-700">Divorced</label></div>
+                        <div class="flex items-center"><input type="radio" id="remarried" name="maritalStatus" value="Remarried" class="h-4 w-4 text-blue-600"><label for="remarried" class="ml-2 text-sm text-gray-700">Remarried</label></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="block text-sm mb-1">Minister</label>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex items-center"><input type="radio" id="ministerYes" name="isMinister" value="Yes" class="h-4 w-4 text-blue-600"><label for="ministerYes" class="ml-2 text-sm text-gray-700">Yes</label></div>
+                        <div class="flex items-center"><input type="radio" id="ministerNo" name="isMinister" value="No" class="h-4 w-4 text-blue-600"><label for="ministerNo" class="ml-2 text-sm text-gray-700">No</label></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="occupation" class="block text-sm">Your present occupation</label>
+                <input type="text" id="occupation" name="presentOccupation" class="mt-1 block w-full">
+                <p class="text-xs text-gray-500 mt-1">If credentialed, please provide us with a copy of your clergy ID and certificates (to be attached to the email).</p>
+            </div>
+        </fieldset>
+
+        <!-- 4. MINISTRY CREDENTIALING HISTORY (Page 3) -->
+        <fieldset class="p-5 border border-gray-200 rounded-lg space-y-4">
+            <legend class="text-lg font-bold px-2 text-gray-700">MINISTRY CREDENTIALING HISTORY (If any)</legend>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="form-group">
+                    <label for="churchName" class="block text-sm">Name of Church/Organization</label>
+                    <input type="text" id="churchName" name="credChurchName" class="mt-1 block w-full">
+                </div>
+                <div class="form-group">
+                    <label for="churchAddress" class="block text-sm">Address</label>
+                    <input type="text" id="churchAddress" name="credChurchAddress" class="mt-1 block w-full">
+                </div>
+                <div class="form-group">
+                    <label for="churchCity" class="block text-sm">City / State / Zip / Telephone</label>
+                    <div class="grid grid-cols-4 gap-2 mt-1">
+                        <input type="text" name="credChurchCity" placeholder="City" class="w-full col-span-1">
+                        <input type="text" name="credChurchState" placeholder="State" class="w-full col-span-1">
+                        <input type="text" name="credChurchZip" placeholder="Zip" class="w-full col-span-1">
+                        <input type="tel" name="credChurchTelephone" placeholder="Telephone" class="w-full col-span-1">
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-sm font-semibold pt-4 border-t mt-4">LEVEL OF CREDENTIALING (Please submit copy of certificate)</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-4 gap-6">
+                <div class="form-group col-span-1">
+                    <label class="block text-sm mb-1">Licensed?</label>
+                    <div class="flex gap-4">
+                        <div class="flex items-center"><input type="checkbox" id="licensedYes" name="licensedStatus" value="Yes" class="h-4 w-4 text-blue-600"><label for="licensedYes" class="ml-2 text-sm text-gray-700">Yes</label></div>
+                        <div class="flex items-center"><input type="checkbox" id="licensedNo" name="licensedStatus" value="No" class="h-4 w-4 text-blue-600"><label for="licensedNo" class="ml-2 text-sm text-gray-700">No</label></div>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group col-span-1">
+                    <label for="licensedNumber" class="block text-sm">Number</label>
+                    <input type="text" id="licensedNumber" name="licensedNumber" class="mt-1 block w-full">
+                </div>
+                <div class="form-group col-span-2">
+                    <label class="block text-sm">Duration: From / To</label>
+                    <div class="grid grid-cols-2 gap-2 mt-1">
+                        <input type="date" name="licensedDurationFrom" class="w-full">
+                        <input type="date" name="licensedDurationTo" class="w-full">
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-4 gap-6">
+                <div class="form-group col-span-1">
+                    <label class="block text-sm mb-1">Ordained?</label>
+                    <div class="flex gap-4">
+                        <div class="flex items-center"><input type="checkbox" id="ordainedYes" name="ordainedStatus" value="Yes" class="h-4 w-4 text-blue-600"><label for="ordainedYes" class="ml-2 text-sm text-gray-700">Yes</label></div>
+                        <div class="flex items-center"><input type="checkbox" id="ordainedNo" name="ordainedStatus" value="No" class="h-4 w-4 text-blue-600"><label for="ordainedNo" class="ml-2 text-sm text-gray-700">No</label></div>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group col-span-1">
+                    <label for="ordainedNumber" class="block text-sm">Number</label>
+                    <input type="text" id="ordainedNumber" name="ordainedNumber" class="mt-1 block w-full">
+                </div>
+                <div class="form-group col-span-2">
+                    <label class="block text-sm">Duration: From / To</label>
+                    <div class="grid grid-cols-2 gap-2 mt-1">
+                        <input type="date" name="ordainedDurationFrom" class="w-full">
+                        <input type="date" name="ordainedDurationTo" class="w-full">
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t mt-4">
+                <!-- Current Church Service -->
+                <div class="space-y-3">
+                    <div class="flex items-center space-x-4">
+                        <p class="text-sm font-medium">Are you a Senior Pastor of a local church?</p>
+                        <div class="flex gap-2">
+                            <label><input type="radio" name="isSeniorPastor" value="Yes" class="h-4 w-4 text-blue-600"> Yes</label>
+                            <label><input type="radio" name="isSeniorPastor" value="No" class="h-4 w-4 text-blue-600"> No</label>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <p class="text-sm font-medium">Are you an Associate Pastor or Minister of a local church?</p>
+                        <div class="flex gap-2">
+                            <label><input type="radio" name="isAssociatePastor" value="Yes" class="h-4 w-4 text-blue-600"> Yes</label>
+                            <label><input type="radio" name="isAssociatePastor" value="No" class="h-4 w-4 text-blue-600"> No</label>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <p class="text-sm font-medium">Do you presently serve on a local church?</p>
+                        <div class="flex gap-2">
+                            <label><input type="radio" name="servesLocalChurch" value="Yes" class="h-4 w-4 text-blue-600"> Yes</label>
+                            <label><input type="radio" name="servesLocalChurch" value="No" class="h-4 w-4 text-blue-600"> No</label>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ministry Assignment / Church Attends -->
+                <div class="space-y-4">
+                    <div class="form-group">
+                        <label for="ministryAssignment" class="block text-sm">If on a local church what is your ministry assignment?</label>
+                        <input type="text" id="ministryAssignment" name="ministryAssignment" class="mt-1 block w-full">
+                    </div>
+                    <div class="form-group">
+                        <label for="churchAttends" class="block text-sm">Where do you attend church?</label>
+                        <input type="text" id="churchAttends" name="churchAttends" class="mt-1 block w-full">
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- 5. Supporting Church Details & Initial Questions (Page 4) -->
+        <fieldset class="p-5 border border-gray-200 rounded-lg space-y-6">
+            <legend class="text-lg font-bold px-2 text-gray-700">Supporting Church Details & Initial Questions</legend>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="form-group">
+                    <label for="seniorPastorName" class="block text-sm">Name of Senior Pastor/Bishop/Archbishop</label>
+                    <input type="text" id="seniorPastorName" name="seniorPastorName" class="mt-1 block w-full">
+                </div>
+                <div class="form-group">
+                    <label for="churchFellowshipName" class="block text-sm">Name of Church/Fellowship</label>
+                    <input type="text" id="churchFellowshipName" name="churchFellowshipName" class="mt-1 block w-full">
+                </div>
+                <div class="form-group md:col-span-2">
+                    <label for="pastorChurchAddress" class="block text-sm">Address / City / State / Zip / Telephone</label>
+                    <div class="grid grid-cols-5 gap-2 mt-1">
+                        <input type="text" name="pastorChurchAddress" placeholder="Address" class="w-full col-span-2">
+                        <input type="text" name="pastorChurchCity" placeholder="City" class="w-full">
+                        <input type="text" name="pastorChurchState" placeholder="State" class="w-full">
+                        <input type="tel" name="pastorChurchTelephone" placeholder="Telephone" class="w-full">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="howFoundOut" class="block text-sm">How did you find out about us?</label>
+                <input type="text" id="howFoundOut" name="howFoundOut" class="mt-1 block w-full">
+            </div>
+
+            <!-- YES/NO Questions from Page 4 -->
+            <div class="space-y-3">
+                <p class="text-sm font-bold pt-4 border-t">Spiritual and Qualification Questions</p>
+                <div class="flex justify-between items-center border-b py-2">
+                    <p class="text-sm">Is your spouse saved?</p>
+                    <div class="flex gap-4">
+                        <label><input type="radio" name="isSpouseSaved" value="Yes" class="h-4 w-4 text-blue-600" required> Yes</label>
+                        <label><input type="radio" name="isSpouseSaved" value="No" class="h-4 w-4 text-blue-600" required> No</label>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center border-b py-2">
+                    <p class="text-sm">Is their attitude toward your ministry favorable?</p>
+                    <div class="flex gap-4">
+                        <label><input type="radio" name="isSpouseFavorable" value="Yes" class="h-4 w-4 text-blue-600" required> Yes</label>
+                        <label><input type="radio" name="isSpouseFavorable" value="No" class="h-4 w-4 text-blue-600" required> No</label>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center border-b py-2">
+                    <p class="text-sm">Have you confessed Jesus Christ as your Lord and Savior?</p>
+                    <div class="flex gap-4">
+                        <label><input type="radio" name="confessedChrist" value="Yes" class="h-4 w-4 text-blue-600" required> Yes</label>
+                        <label><input type="radio" name="confessedChrist" value="No" class="h-4 w-4 text-blue-600" required> No</label>
+                    </div>
+                </div>
+                
+                <div class="space-y-2 pt-4">
+                    <p class="text-sm">Do you have any special skills or training that that may be useful in your service to Southern Africa's Chaplaincy International (SACI, Inc.?</p>
+                    <div class="flex gap-4">
+                        <label><input type="radio" name="specialSkillsYesNo" value="Yes" class="h-4 w-4 text-blue-600" required> Yes</label>
+                        <label><input type="radio" name="specialSkillsYesNo" value="No" class="h-4 w-4 text-blue-600" required> No</label>
+                    </div>
+                    <textarea id="specialSkillsExplain" name="specialSkillsExplain" rows="2" placeholder="If you answered yes, please explain." class="mt-1 block w-full"></textarea>
+                </div>
+
+                <div class="space-y-2 pt-4">
+                    <p class="text-sm">Is there anything in your past that might disqualify you from functioning as a Southern Africa's Chaplaincy International (SACI)?</p>
+                    <div class="flex gap-4">
+                        <label><input type="radio" name="pastDisqualifyYesNo" value="Yes" class="h-4 w-4 text-blue-600" required> Yes</label>
+                        <label><input type="radio" name="pastDisqualifyYesNo" value="No" class="h-4 w-4 text-blue-600" required> No</label>
+                    </div>
+                    <textarea id="pastDisqualifyExplain" name="pastDisqualifyExplain" rows="2" placeholder="If you answered yes, please explain." class="mt-1 block w-full"></textarea>
+                </div>
+
+                <div class="flex justify-between items-center border-t pt-4">
+                    <p class="text-sm font-medium">Are you prepared to render services to individuals and communities in crisis without regard to financial consideration when necessary?</p>
+                    <div class="flex gap-4">
+                        <label><input type="radio" name="preparedToRenderServices" value="Yes" class="h-4 w-4 text-blue-600" required> Yes</label>
+                        <label><input type="radio" name="preparedToRenderServices" value="No" class="h-4 w-4 text-blue-600" required> No</label>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- 6. Spiritual & Ethical Commitment Questions (Pages 5 & 6) -->
+        <fieldset class="p-5 border border-gray-200 rounded-lg space-y-4">
+            <legend class="text-lg font-bold px-2 text-gray-700">Spiritual & Ethical Commitment Questions</legend>
+            
+            <!-- Questions from Page 5 (Continued) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="flex justify-between items-center border-b py-2">
+                    <p class="text-sm">Have you ever backslid?</p>
+                    <div class="flex gap-4">
+                        <label><input type="radio" name="everBackslid" value="Yes" class="h-4 w-4 text-blue-600" required> Yes</label>
+                        <label><input type="radio" name="everBackslid" value="No" class="h-4 w-4 text-blue-600" required> No</label>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center border-b py-2">
+                    <p class="text-sm">Do you use liquor, tobacco, or narcotics?</p>
+                    <div class="flex gap-4">
+                        <label><input type="radio" name="useVices" value="Yes" class="h-4 w-4 text-blue-600" required> Yes</label>
+                        <label><input type="radio" name="useVices" value="No" class="h-4 w-4 text-blue-600" required> No</label>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center border-b py-2 sm:col-span-2">
+                    <p class="text-sm">Are you prepared to render services to individuals and communities in crisis who may not be of the same spiritual persuasion?</p>
+                    <div class="flex gap-4">
+                        <label><input type="radio" name="preparedForCrisisServices" value="Yes" class="h-4 w-4 text-blue-600" required> Yes</label>
+                        <label><input type="radio" name="preparedForCrisisServices" value="No" class="h-4 w-4 text-blue-600" required> No</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ethical Questions (Page 5) -->
+            <div class="space-y-3 pt-4">
+                <div class="flex justify-between items-center border-b py-2">
+                    <p class="text-sm">Do you agree to maintain clergy confidentiality when deemed necessary?</p>
+                    <div class="flex gap-4">
+                        <label><input type="radio" name="agreeConfidentiality" value="Yes" class="h-4 w-4 text-blue-600" required> Yes</label>
+                        <label><input type="radio" name="agreeConfidentiality" value="No" class="h-4 w-4 text-blue-600" required> No</label>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center border-b py-2">
+                    <p class="text-sm">Are you devoted to meeting the spiritual needs of all people regardless of race, gender, religious or political persuasion?</p>
+                    <div class="flex gap-4">
+                        <label><input type="radio" name="devotedToNeeds" value="Yes" class="h-4 w-4 text-blue-600" required> Yes</label>
+                        <label><input type="radio" name="devotedToNeeds" value="No" class="h-4 w-4 text-blue-600" required> No</label>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center border-b py-2">
+                    <p class="text-sm">Are you now free from all sexual misconduct, and do you promise to keep yourself clean and chaste?</p>
+                    <div class="flex gap-4">
+                        <label><input type="radio" name="freeFromMisconduct" value="Yes" class="h-4 w-4 text-blue-600" required> Yes</label>
+                        <label><input type="radio" name="freeFromMisconduct" value="No" class="h-4 w-4 text-blue-600" required> No</label>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center border-b py-2">
+                    <p class="text-sm">Are you careful to lift Christ above your own name and reputation?</p>
+                    <div class="flex gap-4">
+                        <label><input type="radio" name="carefulToLiftChrist" value="Yes" class="h-4 w-4 text-blue-600" required> Yes</label>
+                        <label><input type="radio" name="carefulToLiftChrist" value="No" class="h-4 w-4 text-blue-600" required> No</label>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center border-b py-2">
+                    <p class="text-sm">Do you agree to respect the ministerial office in which you are being commissioned and promise to never to use that authority in ways that violate the rights and integrity of another human being, religiously, sexually or emotionally?</p>
+                    <div class="flex gap-4">
+                        <label><input type="radio" name="respectOffice" value="Yes" class="h-4 w-4 text-blue-600" required> Yes</label>
+                        <label><input type="radio" name="respectOffice" value="No" class="h-4 w-4 text-blue-600" required> No</label>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center border-b py-2">
+                    <p class="text-sm">Do you promise to practice what you preach, and provide leadership by your own example?</p>
+                    <div class="flex gap-4">
+                        <label><input type="radio" name="practiceWhatPreach" value="Yes" class="h-4 w-4 text-blue-600" required> Yes</label>
+                        <label><input type="radio" name="practiceWhatPreach" value="No" class="h-4 w-4 text-blue-600" required> No</label>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center border-b py-2">
+                    <p class="text-sm">Are you willing to stand for what is right, though unpopular, and suffer shame for the gospel of Jesus Christ even unto death as a martyr?</p>
+                    <div class="flex gap-4">
+                        <label><input type="radio" name="willingToStandForRight" value="Yes" class="h-4 w-4 text-blue-600" required> Yes</label>
+                        <label><input type="radio" name="willingToStandForRight" value="No" class="h-4 w-4 text-blue-600" required> No</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ministry Type Checkboxes (Page 5) -->
+            <div class="pt-6">
+                <p class="text-sm font-bold mb-2">Which of the following ministries best describes you? (check all that may apply)</p>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm">
+                    <label class="flex items-center"><input type="checkbox" name="ministryType" value="pastor" class="h-4 w-4 text-blue-600 mr-2"> Pastor</label>
+                    <label class="flex items-center"><input type="checkbox" name="ministryType" value="home visitation" class="h-4 w-4 text-blue-600 mr-2"> Home Visitation</label>
+                    <label class="flex items-center"><input type="checkbox" name="ministryType" value="law enforcement ministries" class="h-4 w-4 text-blue-600 mr-2"> Law Enforcement ministries</label>
+                    <label class="flex items-center"><input type="checkbox" name="ministryType" value="personal work in public" class="h-4 w-4 text-blue-600 mr-2"> Personal Work in Public</label>
+                    <label class="flex items-center"><input type="checkbox" name="ministryType" value="hospital visitation" class="h-4 w-4 text-blue-600 mr-2"> Hospital Visitation</label>
+                    <label class="flex items-center"><input type="checkbox" name="ministryType" value="evangelist" class="h-4 w-4 text-blue-600 mr-2"> Evangelist</label>
+                    <label class="flex items-center"><input type="checkbox" name="ministryType" value="missionary" class="h-4 w-4 text-blue-600 mr-2"> Missionary</label>
+                    <label class="flex items-center"><input type="checkbox" name="ministryType" value="Correctional Services" class="h-4 w-4 text-blue-600 mr-2"> Correctional Services</label>
+                    <label class="flex items-center"><input type="checkbox" name="ministryType" value="other" class="h-4 w-4 text-blue-600 mr-2"> Other</label>
+                </div>
+                <input type="text" name="ministryTypeOther" placeholder="If other, please specify" class="mt-2 block w-full text-sm">
+            </div>
+
+            <!-- Questions from Page 6 -->
+            <div class="space-y-3 pt-6 border-t mt-6">
+                <div class="flex justify-between items-center border-b py-2">
+                    <p class="text-sm">Will you patiently trust God to provide for and promote your ministry?</p>
+                    <div class="flex gap-4">
+                        <label><input type="radio" name="trustGod" value="Yes" class="h-4 w-4 text-blue-600" required> Yes</label>
+                        <label><input type="radio" name="trustGod" value="No" class="h-4 w-4 text-blue-600" required> No</label>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center border-b py-2">
+                    <p class="text-sm">Do you promise to refrain from gossip, evil speaking, and sowing discord among brethren? Pro.6:19</p>
+                    <div class="flex gap-4">
+                        <label><input type="radio" name="refrainFromGossip" value="Yes" class="h-4 w-4 text-blue-600" required> Yes</label>
+                        <label><input type="radio" name="refrainFromGossip" value="No" class="h-4 w-4 text-blue-600" required> No</label>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center border-b py-2">
+                    <p class="text-sm">Are you ready to extend the right hand of fellowship in the spirit of goodwill toward all true Christians?</p>
+                    <div class="flex gap-4">
+                        <label><input type="radio" name="extendFellowship" value="Yes" class="h-4 w-4 text-blue-600" required> Yes</label>
+                        <label><input type="radio" name="extendFellowship" value="No" class="h-4 w-4 text-blue-600" required> No</label>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center border-b py-2">
+                    <p class="text-sm">Will you disassociate yourself from any individual or group, who persistently practices sin, or who does not hold the bible as the authoritative word of God?</p>
+                    <div class="flex gap-4">
+                        <label><input type="radio" name="disassociateSin" value="Yes" class="h-4 w-4 text-blue-600" required> Yes</label>
+                        <label><input type="radio" name="disassociateSin" value="No" class="h-4 w-4 text-blue-600" required> No</label>
+                    </div>
+                </div>
+                <div class="flex justify-between items-center border-b py-2">
+                    <p class="text-sm font-bold">Do you agree with the Statement of faith of Chaplains international?</p>
+                    <div class="flex gap-4">
+                        <label><input type="radio" name="agreeStatementOfFaith" value="Yes" class="h-4 w-4 text-blue-600" required> Yes</label>
+                        <label><input type="radio" name="agreeStatementOfFaith" value="No" class="h-4 w-4 text-blue-600" required> No</label>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- 7. Acknowledgement and Signature (Page 7) -->
+        <fieldset class="p-5 border border-red-300 rounded-lg space-y-6 bg-red-50">
+            <legend class="text-lg font-bold px-2 text-red-700">Acknowledgement</legend>
+            <div class="text-sm text-gray-700 space-y-3">
+                <p>I hereby acknowledge that Southern Africa's Chaplaincy International (SACI), Inc. Does not support or license individuals who are currently incarcerated serving a jail or prison sentence. I also understand that any activity deemed criminal will be a cause for suspension or termination from this organization.</p>
+                <p>I understand that Southern Africa's Chaplaincy International (SACI) is a conservative Christian based fellowship and teaches the doctrines of orthodox Christianity without compromise.</p>
+                <p>I understand that Southern Africa's Chaplaincy International (SACI), Inc. maintains the right to suspend or terminate ministerial licensing for any reason that violates the Southern Africa's Chaplaincy International (SACI), Inc. Code of Ethics, Statement of Faith and organizational by-laws.</p>
+                <p class="font-semibold">I affirm that I have read the Qualifications for License and Ordination, that this application contains no willful misrepresentations or falsifications, and that this information is true and complete to the best of my knowledge. All chaplains upon signing this form acknowledge and accept full responsibility for their actions in the performance of their duties, and release Chaplains International, Inc. from all harm and liability.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t border-red-200">
+                <div class="form-group">
+                    <label for="signature" class="block text-sm">Signature (Type your full name as acknowledgment)</label>
+                    <input type="text" id="signature" name="signature" required class="mt-1 block w-full">
+                </div>
+                <div class="form-group">
+                    <label for="dateSigned" class="block text-sm">Date</label>
+                    <input type="date" id="dateSigned" name="dateSigned" required class="mt-1 block w-full">
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Submit Button -->
+        <div class="flex justify-center pt-8">
+            <button type="submit" class="w-full sm:w-auto px-10 py-3 bg-blue-700 text-white font-semibold rounded-full shadow-lg hover:bg-blue-800 transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50">
+                SUBMIT APPLICATION
+            </button>
+        </div>
+    </form>
+
+    <!-- Footer -->
+    <footer class="text-center mt-10 pt-6 border-t text-sm text-gray-500">
+        <p>APPLICATION DEPARTMENT/OFFICE OF DEPUTY PRESIDENT (BISHOP)</p>
+        <p>Thaba Tshwane Head Quarters | 082596 0038 Copyright All Rights Reserved ©</p>
+    </footer>
+</div>
+
+<script>
+    // JavaScript for handling form submission and mailto generation
+    document.getElementById('chaplaincyForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Stop the default form submission
+
+        const form = e.target;
+        const formData = new FormData(form);
+        const recipientEmail = "gmcebisi@yahoo.com";
+        const subject = "Chaplaincy International Application 2025-2026";
+        let body = "--- SOUTHERN AFRICA'S CHAPLAINS INTERNATIONAL APPLICATION ---\n\n";
+
+        // Helper to format key-value pairs
+        function formatSection(title, data) {
+            let section = `\n\n=== ${title.toUpperCase()} ===\n`;
+            for (const [key, value] of Object.entries(data)) {
+                if (value) {
+                    // Convert camelCase to Title Case for display
+                    const label = key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase()).trim();
+                    section += `${label}: ${value}\n`;
+                }
+            }
+            return section;
+        }
+
+        // 1. Application Level
+        const applicationType = formData.get('applicationType') || 'Not Selected';
+        body += formatSection("Application Level", { 'Application Type': applicationType });
+
+        // 2. Contact Information
+        const contactInfo = {
+            'Applicant Last Name': formData.get('applicantLastName'),
+            'Applicant First Name': formData.get('applicantFirstName'),
+            'Email': formData.get('email'),
+            'Phone': formData.get('phone'),
+            'Address': formData.get('address'),
+            'City': formData.get('city'),
+            'Province': formData.get('province'),
+            'Spouse Last Name': formData.get('spouseLastName'),
+            'Spouse First Name': formData.get('spouseFirstName')
+        };
+        body += formatSection("Contact Information", contactInfo);
+
+        // 3. Personal Information
+        const personalInfo = {
+            'Birth Date': formData.get('birthDate'),
+            'Age': formData.get('age'),
+            'Sex': formData.get('sex'),
+            'Marital Status': formData.get('maritalStatus'),
+            'Minister': formData.get('isMinister'),
+            'Present Occupation': formData.get('presentOccupation')
+        };
+        body += formatSection("Applicants Personal Information", personalInfo);
+
+        // 4. Ministry Credentialing History
+        const credentialingInfo = {
+            'Cred. Church/Organization': formData.get('credChurchName'),
+            'Cred. Church Address': formData.get('credChurchAddress'),
+            'Cred. Church City': formData.get('credChurchCity'),
+            'Cred. Church State': formData.get('credChurchState'),
+            'Cred. Church Zip': formData.get('credChurchZip'),
+            'Cred. Church Telephone': formData.get('credChurchTelephone'),
+            'Licensed Status': formData.get('licensedStatus'),
+            'Licensed Number': formData.get('licensedNumber'),
+            'Licensed Duration From': formData.get('licensedDurationFrom'),
+            'Licensed Duration To': formData.get('licensedDurationTo'),
+            'Ordained Status': formData.get('ordainedStatus'),
+            'Ordained Number': formData.get('ordainedNumber'),
+            'Ordained Duration From': formData.get('ordainedDurationFrom'),
+            'Ordained Duration To': formData.get('ordainedDurationTo'),
+            'Is Senior Pastor': formData.get('isSeniorPastor'),
+            'Is Associate Pastor': formData.get('isAssociatePastor'),
+            'Serves Local Church': formData.get('servesLocalChurch'),
+            'Ministry Assignment': formData.get('ministryAssignment'),
+            'Church Attends': formData.get('churchAttends')
+        };
+        body += formatSection("Ministry Credentialing History & Current Service", credentialingInfo);
+
+        // 5. Supporting Church Details
+        const supportingChurch = {
+            'Senior Pastor/Bishop Name': formData.get('seniorPastorName'),
+            'Church/Fellowship Name': formData.get('churchFellowshipName'),
+            'Pastor Church Address': formData.get('pastorChurchAddress'),
+            'Pastor Church City': formData.get('pastorChurchCity'),
+            'Pastor Church State': formData.get('pastorChurchState'),
+            'Pastor Church Telephone': formData.get('pastorChurchTelephone'),
+            'How Found Out': formData.get('howFoundOut')
+        };
+        body += formatSection("Supporting Church Details", supportingChurch);
+
+
+        // 6. Questionnaire
+        const questionnaire = {
+            'Is spouse saved?': formData.get('isSpouseSaved'),
+            'Is spouse attitude favorable?': formData.get('isSpouseFavorable'),
+            'Have you confessed Christ?': formData.get('confessedChrist'),
+            'Special skills for SACI?': formData.get('specialSkillsYesNo') + (formData.get('specialSkillsExplain') ? ' - Explanation: ' + formData.get('specialSkillsExplain') : ''),
+            'Past disqualify issues?': formData.get('pastDisqualifyYesNo') + (formData.get('pastDisqualifyExplain') ? ' - Explanation: ' + formData.get('pastDisqualifyExplain') : ''),
+            'Prepared to render services without regard to financial consideration?': formData.get('preparedToRenderServices'),
+            'Have you ever backslid?': formData.get('everBackslid'),
+            'Do you use liquor, tobacco, or narcotics?': formData.get('useVices'),
+            'Prepared to render services to individuals not of the same spiritual persuasion?': formData.get('preparedForCrisisServices'),
+            'Agree to maintain clergy confidentiality?': formData.get('agreeConfidentiality'),
+            'Devoted to meeting the spiritual needs of all people regardless of race, gender, etc.?': formData.get('devotedToNeeds'),
+            'Free from all sexual misconduct?': formData.get('freeFromMisconduct'),
+            'Careful to lift Christ above your own name?': formData.get('carefulToLiftChrist'),
+            'Agree to respect ministerial office and promise to never use authority to violate others\' rights?': formData.get('respectOffice'),
+            'Promise to practice what you preach?': formData.get('practiceWhatPreach'),
+            'Willing to stand for what is right, even unto death as a martyr?': formData.get('willingToStandForRight'),
+            'Will you patiently trust God to provide?': formData.get('trustGod'),
+            'Promise to refrain from gossip, evil speaking, and sowing discord?': formData.get('refrainFromGossip'),
+            'Ready to extend the right hand of fellowship toward all true Christians?': formData.get('extendFellowship'),
+            'Will you disassociate yourself from persistent sinners or those who don’t hold the bible as the authoritative word of God?': formData.get('disassociateSin'),
+            'Agree with the Statement of faith?': formData.get('agreeStatementOfFaith'),
+        };
+        body += formatSection("Spiritual & Ethical Questionnaire", questionnaire);
+
+        // Ministry Type Checkboxes
+        const selectedMinistries = [];
+        form.querySelectorAll('input[name="ministryType"]:checked').forEach(checkbox => {
+            selectedMinistries.push(checkbox.value);
+        });
+        const otherMinistry = formData.get('ministryTypeOther');
+        if (selectedMinistries.length > 0) {
+             body += `\n\n=== MINISTRY TYPES SELECTED ===\nSelected: ${selectedMinistries.join(', ')}\n`;
+        }
+        if (otherMinistry) {
+            body += `Other Ministry: ${otherMinistry}\n`;
+        }
+
+        // 7. Acknowledgement
+        const acknowledgement = {
+            'Signature (Typed Full Name)': formData.get('signature'),
+            'Date Signed': formData.get('dateSigned')
+        };
+        body += formatSection("Acknowledgement and Signature", acknowledgement);
+        
+        // Final Reminder
+        body += "\n\n--- IMPORTANT: MANUAL ATTACHMENTS REQUIRED ---\nAs per the application instructions, please ensure you manually attach the following documents to this email:\n1. Ministry Resume\n2. Copies of educational certificates and clergy/ordination certificates (if applicable).";
+
+
+        // Store the final body content in the hidden textarea
+        document.getElementById('emailBodyContent').value = body;
+        
+        // Encode the body for the mailto link (still needed to try to launch the client)
+        const mailtoUrl = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        // Display success message
+        document.getElementById('successMessage').classList.remove('hidden');
+        
+        // Attempt to open the email client (may fail in Canvas/iframe)
+        window.location.href = mailtoUrl;
+
+        // Optionally scroll to the top to see the success message
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    
+    // Function to copy text to clipboard
+    document.getElementById('copyContentBtn').addEventListener('click', function() {
+        const content = document.getElementById('emailBodyContent').value;
+        const copyStatus = document.getElementById('copyStatus');
+        
+        // Use the older, more compatible method for clipboard access in iframes
+        try {
+            const tempInput = document.createElement('textarea');
+            tempInput.value = content;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            copyStatus.textContent = 'Copied to clipboard!';
+            
+            setTimeout(() => {
+                copyStatus.textContent = '';
+            }, 3000);
+        } catch (err) {
+            copyStatus.textContent = 'Could not copy. Please manually copy the text from your email client draft.';
+            // Fallback for extremely strict environments: force selection for manual copy
+            const bodyContent = document.getElementById('emailBodyContent');
+            bodyContent.classList.remove('hidden');
+            bodyContent.style.height = '200px'; // Make it visible for manual copy
+            bodyContent.select();
+            
+        }
+    });
+
+
+    // Optional: Add today's date to the dateSigned field automatically
+    document.addEventListener('DOMContentLoaded', () => {
+        const dateField = document.getElementById('dateSigned');
+        if (dateField) {
+            const today = new Date().toISOString().split('T')[0];
+            dateField.value = today;
+        }
+    });
+</script>
+
+</body>
+</html>
